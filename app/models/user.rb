@@ -22,4 +22,12 @@ def self.find_for_google_oauth(auth, signed_in_resource=nil)
   user
 end
 
+def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session["devise.google_data"] && session["devise.google_data"]["extra"]["raw_info"]
+        user.email = data["email"] if user.email.blank?
+      end
+    end
+  end
+
 end
