@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131016185642) do
+ActiveRecord::Schema.define(:version => 20131016201902) do
 
   create_table "artifacts", :force => true do |t|
     t.integer  "uid"
@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(:version => 20131016185642) do
   end
 
   create_table "users", :force => true do |t|
-    t.integer  "uid"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "user_name"
@@ -67,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20131016185642) do
     t.string   "provider"
     t.string   "name"
     t.boolean  "contacted"
+    t.string   "uid"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
