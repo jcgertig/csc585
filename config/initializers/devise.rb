@@ -5,7 +5,7 @@ Devise.setup do |config|
   config.omniauth :google_oauth2, "594444215136.apps.googleusercontent.com", "smUIapTscHfugBQsOrLR0lhx",
     {
       :scope => "userinfo.email, userinfo.profile, plus.me",
-      :prompt => "select_account",
+      :prompt => "select_account consent",
       :image_aspect_ratio => "square",
       :image_size => 50
     }
