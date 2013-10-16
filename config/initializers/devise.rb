@@ -4,7 +4,7 @@ require "omniauth-google-oauth2"
 Devise.setup do |config|
   config.omniauth :google_oauth2, "594444215136.apps.googleusercontent.com", "smUIapTscHfugBQsOrLR0lhx",
     {
-      :scope => "userinfo.email",
+      :scope => "userinfo.email, userinfo.profile",
       :prompt => "select_account",
       :image_aspect_ratio => "square",
       :image_size => 50

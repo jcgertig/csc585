@@ -8,6 +8,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       set_flash_message(:notice, :success, :kind => "Google") if is_navigational_format?
     else
       session["devise.google_data"] = request.env["omniauth.auth"]
+      flash[:notice] = "More user information is required."
       redirect_to new_user_registration_url
     end
   end
