@@ -13,7 +13,8 @@ def self.find_for_google_oauth(auth, signed_in_resource=nil)
   user = User.where(:provider => auth.provider, :uid => auth.uid).first
   puts "auth" + auth.to_yaml
   unless user
-    user = User.create(name:auth.extra.raw_info.name,
+    user = User.create(first_name:auth.info.first_name,
+      last_name:auth.info.last_name,
       provider:auth.provider,
       uid:auth.uid,
       email:auth.info.email,
