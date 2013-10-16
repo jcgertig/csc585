@@ -1,12 +1,11 @@
 Csc585::Application.routes.draw do
-  devise_for :users
 
   get "home/index"
   root :to => "home#index"
 
   resources :artifacts
 
-
+  devise_for :users
   resources :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
 

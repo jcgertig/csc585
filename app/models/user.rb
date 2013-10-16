@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :uid, :addr1, :addr2, :city, :conntacted, :first_name, :last_name, :phone, :state, :user_name, :zipcode
+  attr_accessible :uid, :addr1, :addr2, :city, :contacted, :first_name, :last_name, :phone, :state, :user_name, :zipcode
 
 def self.find_for_google_oauth(auth, signed_in_resource=nil)
   user = User.where(:provider => auth.provider, :uid => auth.uid).first

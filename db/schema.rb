@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131015172934) do
+ActiveRecord::Schema.define(:version => 20131016185642) do
 
   create_table "artifacts", :force => true do |t|
     t.integer  "uid"
@@ -27,6 +27,13 @@ ActiveRecord::Schema.define(:version => 20131015172934) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "states", :force => true do |t|
+    t.string   "name"
+    t.string   "abbr"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.integer  "uid"
     t.string   "first_name"
@@ -38,7 +45,6 @@ ActiveRecord::Schema.define(:version => 20131015172934) do
     t.string   "state"
     t.string   "zipcode"
     t.string   "phone"
-    t.boolean  "conntacted"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "email",                  :default => "", :null => false
@@ -60,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20131015172934) do
     t.datetime "locked_at"
     t.string   "provider"
     t.string   "name"
+    t.boolean  "contacted"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
