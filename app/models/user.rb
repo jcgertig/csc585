@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
 def self.find_for_google_oauth(auth, signed_in_resource=nil)
   user = User.where(:provider => auth.provider, :uid => auth.uid).first
   puts "auth" + auth.to_yaml
-  puts "name |= " + auth.info.last_name
   unless user
     user = User.create(first_name:auth.info.first_name,
       last_name:auth.info.last_name,
@@ -27,7 +26,7 @@ end
 
 def self.new_with_session(params, session)
     super.tap do |user|
-      if data = session["devise.google_data"] && session["devise.google_data"]["extra"]["raw_info"]
+      if data = session["devise.google_data"] && session["devise.google_data"]["info"]
         user.email = data["email"] if user.email.blank?
       end
     end
