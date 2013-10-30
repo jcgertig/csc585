@@ -6,7 +6,7 @@ class HomeController < ApplicationController
 			elsif current_user.empty_fields?
         redirect_to edit_profile_path(current_user.profile), notice: "Please fill in your profile information."
 			else
-        redirect_to show_profile_path(current_user.profile)
+        redirect_to profile_path(current_user.profile)
 			end	
 		end
 	end
