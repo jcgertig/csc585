@@ -7,7 +7,7 @@
   </div>
   <div class="form-inputs">
     <%= f.button :submit, "Sign in", class: "btn btn-large btn-primary"%>
-    <%= link_to "With Google", omniauth_authorize_path(resource_name, provider), :class => "btn btn-success" %>
+    <%= link_to "With Google", "/users/auth/google_oauth2", :class => "btn btn-large btn-success" %>
   </div>
   <div class="form-inputs pull-right">
     <%= link_to "Need an account?", new_user_registration_path, class: " " %>
