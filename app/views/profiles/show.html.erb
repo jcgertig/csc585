@@ -1,40 +1,91 @@
-<p id="notice"><%= notice %></p>
+div class="field">
+    <%= f.label : %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label : %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label : %><br />
+    <%= f.text_field :user_name %>
+  </div>
+  <div class="field">
+    <%= f.label :addr_line1 %><br />
+    <%= f.text_field :addr_line1 %>
+  </div>
+  <div class="field">
+    <%= f.label :addr_line2 %><br />
+    <%= f.text_field :addr_line2 %>
+  </div>
+  <div class="field">
+    <%= f.label : %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :zip_code %><br />
+    <%= f.text_field :zip_code %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.telephone_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :contact %>
+    <%= f.check_box :contact %>
 
 <p>
-  <b>Type:</b>
-  <%= @artifact.type %>
+  <b>First Name:</b>
+  <%= @profile.first_name %>
 </p>
 
 <p>
-  <b>Period:</b>
-  <%= @artifact.period %>
+  <b>Last Name:</b>
+  <%= @profile.last_name %>
 </p>
 
 <p>
-  <b>Context:</b>
-  <%= @artifact.context %>
+  <b>User Name:</b>
+  <%= @profile.user_name %>
 </p>
 
 <p>
-  <b>County:</b>
-  <%= @artifact.county %>
+  <b>Line 1:</b>
+  <%= @profile.addr_line1 %>
 </p>
 
 <p>
-  <b>Lat:</b>
-  <%= @artifact.lat %>
+  <b>Line 2:</b>
+  <%= @profile.addr_line2 %>
 </p>
 
 <p>
-  <b>Lon:</b>
-  <%= @artifact.lon %>
+  <b>City:</b>
+  <%= @profile.city %>
 </p>
 
 <p>
-  <b>Desc:</b>
-  <%= @artifact.desc %>
+  <b>State:</b>
+  <%= @profile.state %>
 </p>
 
+<p>
+  <b>Zip Code:</b>
+  <%= @profile.zip_code %>
+</p>
 
-<%= link_to 'Edit', edit_artifact_path(@artifact) %> |
-<%= link_to 'Back', artifacts_path %>
+<p>
+  <b>Phone:</b>
+  <%= @profile.phone %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%= @profile.contact %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %>
