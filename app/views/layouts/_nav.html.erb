@@ -10,16 +10,16 @@
         <a href="http://www.murraystate.edu/qacd/cos/geo/geo_res/Archaeology%20Lab.htm"><%= image_tag("msu_arch_logo.jpg") %></a>
       </span>
       <span class="pull-left tittle" style="padding-top: 10px;">
-        <h3>The Kentuckey Artifact Registry</h3>
+        <h3>The Kentucky Artifact Registry</h3>
       </span>
       
       <ul class="nav pull-right" style="height: 82.5px;">
         <li class="divider-vertical" style="height: 82.5px;"></li>
         <% if user_signed_in? %>
-          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <li style="margin-top: 21.25px;"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% end %>
         <% if !user_signed_in? %>
-          <li class="dropdown" style="height: 82.5px;">
+          <li class="dropdown" style="height: 82.5px; margin-top: 21.25px;">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">Help <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <% if params[:controller].parameterize != 'devise-sessions' %>
