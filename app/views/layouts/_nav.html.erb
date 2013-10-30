@@ -5,16 +5,21 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </a>
-    <a href="http://www.murraystate.edu/qacd/cos/geo/geo_res/Archaeology%20Lab.htm" class="brand"><%= image_tag("msu_arch_logo.jpg") %></a>
     <div class="nav-collapse">
-    <span class="pull-left"><h4>The Kentuckey Artifact Registry</h4></span>
-      <ul class="nav pull-right">
-        <li class="divider-vertical"></li>
+      <span class="pull-left padded-tb" style="padding-top: 2.5px; padding-bottom: 2.5px;">
+        <a href="http://www.murraystate.edu/qacd/cos/geo/geo_res/Archaeology%20Lab.htm"><%= image_tag("msu_arch_logo.jpg") %></a>
+      </span>
+      <span class="pull-left tittle" style="padding-top: 10px;">
+        <h3>The Kentuckey Artifact Registry</h3>
+      </span>
+      
+      <ul class="nav pull-right" style="height: 82.5px;">
+        <li class="divider-vertical" style="height: 82.5px;"></li>
         <% if user_signed_in? %>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% end %>
         <% if !user_signed_in? %>
-          <li class="dropdown">
+          <li class="dropdown" style="height: 82.5px;">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">Help <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <% if params[:controller].parameterize != 'devise-sessions' %>
