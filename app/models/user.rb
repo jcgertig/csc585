@@ -1,0 +1,38 @@
+class User < ActiveRecord::Base
+  has_many :artifacts
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable, :omniauthable, :omniauth_providers => [:google_oauth2]
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :uid, :addr1, :addr2, :city, :contacted, :first_name, :last_name, :phone, :state, :user_name, :zipcode
+
+def self.find_for_google_oauth(auth, signed_in_resource=nil)
+  user = User.where(:provider => auth.provider, :uid => auth.uid).first
+  puts user.to_s
+  puts "auth" + auth.to_yaml
+  unless user
+    user = User.create(first_name:auth.info.first_name,
+      last_name:auth.info.last_name,
+      provider:auth.provider,
+      uid:auth.uid,
+      email:auth.info.email,
+      password:Devise.friendly_token[0,20]
+    )
+  end
+  user
+end
+
+def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session["devise.google_data"] && session["devise.google_data"]["extra"]["raw_info"]
+        user.email = data["email"] if user.email.blank?
+        user.first_name = data["first_name"] if user.first_name.blank?
+        user.last_name = data["last_name"] if user.last_name.blank?
+      end
+    end
+  end
+
+end

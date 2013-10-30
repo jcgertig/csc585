@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lorem ipsum</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%=params[:controller].parameterize%>_<%=params[:action].parameterize%>">
+  <%= render "layouts/nav" %>
+  <%= render 'layouts/flash' %>
+  <div class="container" id="app">
+    <%= yield %>
+  </div>
+  <footer>
+    <div class="bar">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
+    </div>
+  </footer>
+</body>
+</html>
