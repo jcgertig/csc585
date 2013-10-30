@@ -21,7 +21,7 @@
         <% if !user_signed_in? %>
           <li class="dropdown" style="height: 82.5px; margin-top: 21.25px;">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">Help <b class="caret"></b></a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" style="margin-top: 15px; z-index:1001;">
                 <% if params[:controller].parameterize != 'devise-sessions' %>
                   <li><%= link_to "Sign in", new_user_session_path %></li>
                 <% end %>
