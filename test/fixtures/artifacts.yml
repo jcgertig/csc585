@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 
+  period: MyString
+  context: MyString
+  county: MyString
+  lat: MyString
+  lon: MyString
+  desc: MyText
+
+two:
+  type: 
+  period: MyString
+  context: MyString
+  county: MyString
+  lat: MyString
+  lon: MyString
+  desc: MyText
