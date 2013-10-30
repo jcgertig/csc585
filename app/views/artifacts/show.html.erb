@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Type:</b>
+  <%= @artifact.type %>
+</p>
+
+<p>
+  <b>Period:</b>
+  <%= @artifact.period %>
+</p>
+
+<p>
+  <b>Context:</b>
+  <%= @artifact.context %>
+</p>
+
+<p>
+  <b>County:</b>
+  <%= @artifact.county %>
+</p>
+
+<p>
+  <b>Lat:</b>
+  <%= @artifact.lat %>
+</p>
+
+<p>
+  <b>Lon:</b>
+  <%= @artifact.lon %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @artifact.desc %>
+</p>
+
+
+<%= link_to 'Edit', edit_artifact_path(@artifact) %> |
+<%= link_to 'Back', artifacts_path %>
