@@ -1,3 +1,54 @@
-<h1>New Profile</h1>
+<div class="span9 form_user_signup">
+<%= simple_form_for(resource, :as => resource_name, html: {class: ""}) do |f| %>
+  <%= f.error_notification %>
+  <h2 class="form-signin-heading">Profile Information</h2>
+  <div class="note">
+    Please fill out the following appliation to get started. (view <a href="#" target="_blank">privacy policy</a>).
+  </div>
+  <hr/>
+  <h4 class="span8">Contact Information</h4>
+  <div class="span4">
+    <%= f.input :first_name, :required => true, :autofocus => true, wrapper_html: {:class => "first_name"}%>
+  </div>
+  <div class="span4">
+    <%= f.input :last_name, :required => true, :autofocus => true, wrapper_html: {:class => "last_name"}%>
+  </div>
+  <div class="span7">
+    <%= f.input :user_name, :required => true, label: "User name (will be visible by others)", :autofocus => true, input_html: {:class => "input-block-level"} %>
+  </div>
+  <div class="span8">
+    <hr/>
+  </div>
+  <h4 class="span8">Address</h4>
+  <div class="address">
+      <div class="span7">
+        <%=f.input :addr_line1, required: true, label: "Street Address", input_html: {:class => "input-block-level"}%>
+      </div>
+      <div class="span7">
+        <%=f.input :addr_line2, label: "Address Line 2", input_html: {:class => "input-block-level"}%>
+      </div>
+      <div class="span4">
+        <%=f.input :city, required: true, label: "City"%>
+      </div>
+      <div class="span4">
+        <%=f.input :state, required: true, collection: states, label: "State", value_method: :abbr, include_blank: 'Select State'%>
+      </div>
+      <div class="span4">
+        <%=f.input :zip_code, required: true, label: "Postal / Zip Code"%>
+      </div>
+  </div>
+  <div class="span7">
+    <%= f.input :phone, :required => false, label: "Phone Number" %>
+  </div>
+  <div class="span8">
+    <hr/>
+  </div>
+  <div class="span6">
+    <%= f.input :contact, :required => true, :autofocus => true, label: "Legitimate researchers may contact me?", wrapper_html: {class: "input-block-level"} %>
+  </div>
 
-<%= render 'form' %>
+  <div class="span6">
+    <%= f.button :submit, "Add Information", class: "btn btn-large btn-primary " %>
+  </div>
+<% end %>
+</div>
