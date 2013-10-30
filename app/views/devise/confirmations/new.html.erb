@@ -1,4 +1,4 @@
-<%= simple_form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => {:class => "form-signin wide", :method => :post }) do |f| %>
+<%= simple_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => {:class => "form-signin wide", :method => :post }) do |f| %>
   <%= f.error_notification %>
   <%= f.full_error :confirmation_token %>
   <h2 class="form-signin-heading">Resend confirmation instructions</h2>
