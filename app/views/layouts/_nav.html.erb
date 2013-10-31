@@ -18,9 +18,9 @@
         <% if user_signed_in? %>
           <li class="dropdown" style="height: 82.5px; margin-top: 21.25px;">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-th-list"></i> <b class="caret"></b></a>
-            <ul class="dropdown-menu" style="margin-top: 15px; z-index:1001;">
-                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete %><i class="icon-arrow-right"></i></li>
-                  <li><%= link_to "Edit Profile", edit_profile_path(current_user.profile) %><i class="icon-user"></i></li>
+            <ul class="dropdown-menu" style="margin-top: 0; z-index:1001;">
+                  <li><i class="icon-arrow-right"></i><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                  <li><i class="icon-user"></i><%= link_to "Edit Profile", edit_profile_path(current_user.profile) %></li>
             </ul>
           </li>
         <% else user_signed_in? %>
