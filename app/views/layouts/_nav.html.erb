@@ -16,7 +16,6 @@
       <ul class="nav pull-right" style="height: 82.5px;">
         <li class="divider-vertical" style="height: 82.5px;"></li>
         <% if user_signed_in? %>
-          <li style="margin-top: 21.25px;"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
           <li class="dropdown" style="height: 82.5px; margin-top: 21.25px;">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-th-list"></i> <b class="caret"></b></a>
             <ul class="dropdown-menu" style="margin-top: 15px; z-index:1001;">
