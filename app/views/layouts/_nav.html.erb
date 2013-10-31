@@ -20,7 +20,7 @@
             <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-th-list"></i> <b class="caret"></b></a>
             <ul class="dropdown-menu" style="margin-top: -30px; z-index:1001;">
                   <li><%= link_to '<i class="icon-arrow-right"></i> Logout'.html_safe, destroy_user_session_path, method: :delete %></li>
-                  <% if params[:controller].parameterize != 'profile' %>
+                  <% if params[:controller].parameterize != 'profile-edit' %>
                   <li><%= link_to '<i class="icon-user"></i> Edit Profile'.html_safe, edit_profile_path(current_user.profile) %></li>
                   <% end %>
             </ul>
