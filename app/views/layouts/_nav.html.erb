@@ -19,8 +19,8 @@
           <li class="dropdown" style="height: 82.5px; margin-top: 21.25px;">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-th-list"></i> <b class="caret"></b></a>
             <ul class="dropdown-menu" style="margin-top: 0; z-index:1001;">
-                  <li><%= link_to "Logout<i class='icon-arrow-right'></i>", destroy_user_session_path, method: :delete %></li>
-                  <li><%= link_to (<i class="icon-user"></i>"Edit Profile"), edit_profile_path(current_user.profile) %></li>
+                  <li><%= link_to '<i class="icon-arrow-right"></i> Logout'.html_safe, destroy_user_session_path, method: :delete %></li>
+                  <li><%= link_to '<i class="icon-user"></i> Edit Profile'.html_safe, edit_profile_path(current_user.profile) %></li>
             </ul>
           </li>
         <% else user_signed_in? %>
