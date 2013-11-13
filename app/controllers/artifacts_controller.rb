@@ -1,14 +1,5 @@
 class ArtifactsController < ApplicationController
-  # GET /artifacts
-  # GET /artifacts.json
-  def index
-    @artifacts = Artifact.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @artifacts }
-    end
-  end
+  before_filter :authenticate_user!
 
   # GET /artifacts/1
   # GET /artifacts/1.json
@@ -40,7 +31,7 @@ class ArtifactsController < ApplicationController
   # POST /artifacts
   # POST /artifacts.json
   def create
-    @artifact = Artifact.new(params[:artifact])
+    @artifact = current_user.artifacts.new(params[:artifact], user_id: current_user.id)
 
     respond_to do |format|
       if @artifact.save

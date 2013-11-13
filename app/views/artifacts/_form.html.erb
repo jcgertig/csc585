@@ -1,4 +1,4 @@
-<%= form_for(@artifact) do |f| %>
+<%= simple_form_for(@artifact, html: {class: "Center-Container"}) do |f| %>
   <% if @artifact.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@artifact.errors.count, "error") %> prohibited this artifact from being saved:</h2>
@@ -10,36 +10,30 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
-  </div>
-  <div class="field">
-    <%= f.label :period %><br />
-    <%= f.text_field :period %>
-  </div>
-  <div class="field">
-    <%= f.label :context %><br />
-    <%= f.text_field :context %>
-  </div>
-  <div class="field">
-    <%= f.label :county %><br />
-    <%= f.text_field :county %>
-  </div>
-  <div class="field">
-    <%= f.label :lat %><br />
-    <%= f.text_field :lat %>
-  </div>
-  <div class="field">
-    <%= f.label :lon %><br />
-    <%= f.text_field :lon %>
-  </div>
-  <div class="field">
-    <%= f.label :desc %><br />
-    <%= f.text_area :desc %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="Absolute-Center">
+    <div class="span4">
+          <%=f.input :a_type, required: true, collection: types, label: "Type", value_method: :name, include_blank: 'Select Type'%>
+        </div>
+    <div class="span4">
+          <%=f.input :period, required: true, collection: periods, label: "Period", value_method: :name, include_blank: 'Select Period'%>
+        </div>
+    <div class="span4">
+          <%=f.input :context, required: true, collection: contexts, label: "Context", value_method: :name, include_blank: 'Select Context'%>
+        </div>
+    <div class="span4">
+          <%=f.input :county, required: true, collection: counties, label: "County", value_method: :name, include_blank: 'Select County'%>
+        </div>
+    <div class="span4">
+          <%=f.input :lat, required: false, label: "Latitude"%>
+        </div>
+    <div class="span4">
+          <%=f.input :lon, required: false, label: "Longitude"%>
+        </div>
+    <div class="span9">
+          <%=f.input :desc, as: :text, required: true, label: "Description", input_html: { cols: 85, rows: 10, style: "width: inherit;" }%>
+        </div>
+    <div class="span6">
+      <%= f.button :submit, "Submit", class: "btn btn-large btn-primary" %>
+    </div>
   </div>
 <% end %>

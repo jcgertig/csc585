@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20131030153351) do
 
   create_table "artifacts", :force => true do |t|
-    t.string   "type"
+    t.string   "a_type"
     t.string   "period"
     t.string   "context"
     t.string   "county"
@@ -54,10 +54,10 @@ ActiveRecord::Schema.define(:version => 20131030153351) do
     t.string   "state"
     t.string   "zip_code"
     t.string   "phone"
-    t.boolean  "contact"
+    t.boolean  "contact",    :default => false
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "states", :force => true do |t|

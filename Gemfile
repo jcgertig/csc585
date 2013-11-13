@@ -5,23 +5,16 @@ gem 'rails', '3.2.13'
 gem 'devise'
 gem 'omniauth-google-oauth2'
 
-gem 'heroku'
-
 gem 'decent_exposure'
 gem 'turbolinks'
-
 gem 'simple_form'
-gem 'sass-rails',   '~> 3.2.3'
-gem 'bootstrap-sass'
 
-#for server
-#group :production do
-#	gem 'mysql'
-#end
-
-#for heroku
 group :production do
+  # needed for heroku
   gem 'pg'
+
+  #TODO  needed for the server
+  #gem 'mysql'
 end
 
 # Gems used only for assets and not required
@@ -29,6 +22,8 @@ end
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'bootstrap-sass'
 
   #TODO  needed for the server
   #gem 'execjs'
@@ -46,6 +41,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'quiet_assets'
   gem 'rspec-rails'
+  gem 'heroku'
 end
 
 gem 'jquery-rails'

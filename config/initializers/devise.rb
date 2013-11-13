@@ -7,7 +7,7 @@ Devise.setup do |config|
   config.secret_key = '3152665fc97b0eca66d1540c65e86aa53d882a486df1e14b109e386f7c525c5b5a821496d715b054e2539cb4a4cc56ef30da3a9684d23a32145c218fd2dd4e46'
 
   # ==> Omniauth Configuration
-  config.omniauth :google_oauth2, "594444215136.apps.googleusercontent.com", "smUIapTscHfugBQsOrLR0lhx",
+  config.omniauth :google_oauth2, ENV['GOOGLE_APP_ID'], ENV['GOOGLE_SECRET'],
     {
       :scope => "userinfo.email, userinfo.profile, plus.me",
       :prompt => "select_account consent",

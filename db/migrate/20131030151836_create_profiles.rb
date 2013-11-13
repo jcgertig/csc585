@@ -10,7 +10,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :state
       t.string :zip_code
       t.string :phone
-      t.boolean :contact
+      t.boolean :contact, default: false
       t.integer :user_id
 
       t.timestamps

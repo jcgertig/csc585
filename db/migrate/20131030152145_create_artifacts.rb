@@ -1,7 +1,7 @@
 class CreateArtifacts < ActiveRecord::Migration
   def change
     create_table :artifacts do |t|
-      t.string :type
+      t.string :a_type
       t.string :period
       t.string :context
       t.string :county

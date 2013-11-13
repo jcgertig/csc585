@@ -7,9 +7,10 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :provider, :uid
+  attr_accessible :provider, :uid, :kind
 
   has_one :profile
+  has_many :artifacts;
 
   def no_profile?
     profile.nil?

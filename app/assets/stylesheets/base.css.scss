@@ -1,8 +1,7 @@
 @import "bootstrap";
 body {
     background-color: #F5F5F5;
-    padding-bottom: 40px;
-    padding-top: 50px;
+    padding-top: 85px;
     font-family: Arial,Helvetica,sans-serif;
 }
 
@@ -19,11 +18,10 @@ a.brand img{
 
 footer {
   border-top: 1px solid #E5E5E5;
-  margin-top: 70px;
   padding: 30px 0;
-  padding-left: 80px;
+  margin-top: 5px;
   div.bar {
-    padding-top: 20px;
+    padding-top: 15px;
     text-align: center;
     font-size: 10px;
   }
@@ -61,6 +59,19 @@ label.error {
   text-align: left;
 }
 
-#app {
-  margin-top: 35px;
+form {
+  overflow: auto;
+}
+
+.Center-Container {
+  position: relative;
+  overflow-y: auto;
+}
+
+.Absolute-Center {
+  width: 80%;
+  height: 80%;
+  overflow: auto;
+  margin: auto;
+  top: 0; left: 0; bottom: 0; right: 0;
 }

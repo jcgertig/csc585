@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  before_filter :authenticate_user!
 
   # GET /profiles/1
   # GET /profiles/1.json
@@ -30,12 +31,11 @@ class ProfilesController < ApplicationController
   # POST /profiles
   # POST /profiles.json
   def create
-    @profile = Profile.new(params[:profile], user_id: current_user.id)
-    @profile = current_user.profile = @profile
+    @profile = current_user.profile.new(params[:profile], kind: "basic")
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to @profile, notice: 'profile was successfully created.' }
+        format.html { redirect_to root_path, notice: 'profile was successfully created.' }
         format.json { render json: @profile, status: :created, location: @profile }
       else
         format.html { render action: "new" }
