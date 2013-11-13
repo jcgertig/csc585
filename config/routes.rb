@@ -9,7 +9,6 @@ Csc585::Application.routes.draw do
 
   resources :artifacts
 
-
   resources :profiles
 
 
