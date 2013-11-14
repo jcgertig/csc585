@@ -241,8 +241,8 @@
   }
 
   #Dr Raj - Advisor
-  #User.create(email: "vraj@murraystate.edu", password: "csc585_password", kind: "admin")
+  User.create(email: "vraj@murraystate.edu", password: "csc585_password", kind: "admin")
   #Dr Wesler
-  #User.create(email: "kwesler@murraystate.edu", password: "csc585_password", kind: "admin")
+  User.create(email: "kwesler@murraystate.edu", password: "csc585_password", kind: "admin")
   #Jonathan Gertig - First Dev
   User.create(email: "jcgertig@gmail.com", password: "csc585_password", kind: "admin")

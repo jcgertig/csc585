@@ -23,6 +23,9 @@
                   <% if params[:controller] != 'profiles' %>
                   <li><%= link_to '<i class="icon-user"></i> Edit Profile'.html_safe, edit_profile_path(current_user.profile) %></li>
                   <% end %>
+                  <% if current_user.is_admin? %>
+                  <li><%= link_to '<i class="icon-eye-open"></i> Admin Dashboard'.html_safe, admin_root_path %></li>
+                  <% end %>
             </ul>
           </li>
         <% else user_signed_in? %>
