@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
     profile.empty_fields?
   end
 
+  def is_admin?
+    kind == "admin"
+  end
+
   def self.find_for_google_oauth(auth, signed_in_resource=nil)
     user = User.where(provider: auth.provider, uid: auth.uid).first
     puts user.to_s

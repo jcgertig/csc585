@@ -1,5 +1,7 @@
 Csc585::Application.routes.draw do
 
+  ActiveAdmin.routes(self)
+
   get "home/index"
 
   root to: "home#index"

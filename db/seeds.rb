@@ -240,6 +240,9 @@
     st ||= State.create(abbr: abbr.downcase, name: name.titleize)
   }
 
-  #drRaj = User.Create(email: "vraj@murraystate.edu", password: "csc585_password", kind: "admin")
-  #drWesler = User.Create(email: "kwesler@murraystate.edu", password: "csc585_password", kind: "admin")
-  #jgertig = User.Create(email: "jcgertig@gmail.com", password: "csc585_password", kind: "admin")
+  #Dr Raj - Advisor
+  #User.create(email: "vraj@murraystate.edu", password: "csc585_password", kind: "admin")
+  #Dr Wesler
+  #User.create(email: "kwesler@murraystate.edu", password: "csc585_password", kind: "admin")
+  #Jonathan Gertig - First Dev
+  User.create(email: "jcgertig@gmail.com", password: "csc585_password", kind: "admin")

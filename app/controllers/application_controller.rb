@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
   expose(:types) { Type.all }
   expose(:contexts) { Context.by_name }
   expose(:periods) { Period.all }
+
+  def authenticate_admin_user!
+   redirect_to new_user_session_path unless current_user.try(:is_admin?) 
+  end
 end

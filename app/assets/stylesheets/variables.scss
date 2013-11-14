@@ -1,4 +1,4 @@
-// Spacelab 2.2.2
+// Readable 2.2.2
 // Variables
 // --------------------------------------------------
 
@@ -10,52 +10,52 @@
 // Grays
 // -------------------------
 $black:                 #000;
-$grayDarker:            #2D2D2D;
-$grayDark:              #434848;
-$gray:                  #666;
-$grayLight:             #bbb;
+$grayDarker:            #222;
+$grayDark:              #333;
+$gray:                  #555;
+$grayLight:             #999;
 $grayLighter:           #eee;
 $white:                 #fff;
 
 
 // Accent colors
 // -------------------------
-$blue:                  #3399F3;
-$blueDark:              #405A6A;
-$green:                 #3CB521;
-$red:                   #CD0200;
-$yellow:                #F4CA00;
-$orange:                #D47500;
-$pink:                  #F44B8C;
-$purple:                #405A6A;
+$blue:                  #0063AC;
+$blueDark:              #0064cd;
+$green:                 #1C9B47;
+$red:                   #9c0001;
+$yellow:                #ffc40d;
+$orange:                #f89406;
+$pink:                  #c3325f;
+$purple:                #7a43b6;
 
 
 // Scaffolding
 // -------------------------
-$bodyBackground:        $white;
-$textColor:             $gray;
+$bodyBackground:        #F6F6F6;
+$textColor:             $grayDark;
 
 
 // Links
 // -------------------------
-$linkColor:             #09d;
-$linkColorHover:        $linkColor;
+$linkColor:             $red;
+$linkColorHover:        darken($linkColor, 5%);
 
 
 // Typography
 // -------------------------
-$sansFontFamily:        "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$serifFontFamily:       Georgia, "Times New Roman", Times, serif;
-$monoFontFamily:        Menlo, Monaco, Consolas, "Courier New", monospace;
+$sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serifFontFamily:       "Lora", Georgia, "Times New Roman", Times, serif;
+$monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
 
-$baseFontSize:          15px;
-$baseFontFamily:        $sansFontFamily;
-$baseLineHeight:        21px;
-$altFontFamily:         $serifFontFamily;
+$baseFontSize:          18px;
+$baseFontFamily:        $serifFontFamily;
+$baseLineHeight:        26px;
+$altFontFamily:         $sansFontFamily;
 
 $headingsFontFamily:    inherit; // empty to use BS default, $baseFontFamily
-$headingsFontWeight:    normal;    // instead of browser default, bold
-$headingsColor:         $grayDarker; // empty to use BS default, $textColor
+$headingsFontWeight:    bold;    // instead of browser default, bold
+$headingsColor:         inherit; // empty to use BS default, $textColor
 
 
 // Component sizing
@@ -85,23 +85,26 @@ $tableBorder:                       #ddd; // table and cell border
 // Buttons
 // -------------------------
 $btnBackground:                     $white;
-$btnBackgroundHighlight:            $grayLighter;
-$btnBorder:                         darken($btnBackground, 20%);
+$btnBackgroundHighlight:            darken($white, 10%);
+$btnBorder:                         #bbb;
 
-$btnPrimaryBackground:              lighten($linkColor, 10%);
+$btnPrimaryBackground:              lighten($linkColor, 5%);
 $btnPrimaryBackgroundHighlight:     $linkColor;
 
-$btnInfoBackground:                 lighten(#3A5D83, 10%);
-$btnInfoBackgroundHighlight:        #3A5D83;
+$btnInfoBackground:                 lighten($blue, 5%);
+$btnInfoBackgroundHighlight:        $blue;
 
-$btnSuccessBackground:              lighten($green, 10%);
+$btnSuccessBackground:              lighten($green, 5%);
 $btnSuccessBackgroundHighlight:     $green;
 
-$btnWarningBackground:              lighten($orange, 10%);
+$btnWarningBackground:              lighten($orange, 5%);
 $btnWarningBackgroundHighlight:     $orange;
 
-$btnDangerBackground:               lighten($red, 10%);
+$btnDangerBackground:               lighten($red, 5%);
 $btnDangerBackgroundHighlight:      $red;
+
+$btnInverseBackground:              lighten($grayDark, 5%);
+$btnInverseBackgroundHighlight:     $grayDark;
 
 
 // Forms
@@ -116,12 +119,12 @@ $inputHeight:                   $baseLineHeight + 10px; // base line-height + 8p
 
 // Dropdowns
 // -------------------------
-$dropdownBackground:            $white;
+$dropdownBackground:            $bodyBackground;
 $dropdownBorder:                rgba(0,0,0,.2);
 $dropdownDividerTop:            #e5e5e5;
 $dropdownDividerBottom:         $white;
 
-$dropdownLinkColor:             $textColor;
+$dropdownLinkColor:             $grayDark;
 $dropdownLinkColorHover:        $white;
 $dropdownLinkColorActive:       $white;
 
@@ -148,8 +151,8 @@ $zindexModal:             1050;
 
 // Sprite icons path
 // -------------------------
-$iconSpritePath:          image-path("glyphicons-halflings.png");
-$iconWhiteSpritePath:     image-path("glyphicons-halflings-white.png");
+$iconSpritePath:          "../img/glyphicons-halflings.png";
+$iconWhiteSpritePath:     "../img/glyphicons-halflings-white.png";
 
 
 // Input placeholder text color
@@ -169,7 +172,7 @@ $horizontalComponentOffset:       180px;
 
 // Wells
 // -------------------------
-$wellBackground:                  $grayLighter;
+$wellBackground:                  #f5f5f5;
 
 
 // Navbar
@@ -177,41 +180,36 @@ $wellBackground:                  $grayLighter;
 $navbarCollapseWidth:             979px;
 $navbarCollapseDesktopWidth:      $navbarCollapseWidth + 1;
 
-$navbarHeight:                    40px;
-$navbarBackgroundHighlight:       $grayLighter;
-$navbarBackground:                lighten($grayLight, 5%);
-$navbarBorder:                    $grayLight;
+$navbarHeight:                    60px;
+$navbarBackgroundHighlight:       $bodyBackground;
+$navbarBackground:                $bodyBackground;
+$navbarBorder:                    darken($navbarBackground, 12%);
 
 $navbarText:                      $textColor;
 $navbarLinkColor:                 $textColor;
-$navbarLinkColorHover:            $black;
-$navbarLinkColorActive:           $black;
+$navbarLinkColorHover:            $textColor;
+$navbarLinkColorActive:           $textColor;
 $navbarLinkBackgroundHover:       transparent;
-$navbarLinkBackgroundActive:      transparent;
+$navbarLinkBackgroundActive:      darken($navbarBackground, 5%);
 
 $navbarBrandColor:                $navbarLinkColor;
 
 // Inverted navbar
-$navbarInverseBackground:                #6C737E;
+$navbarInverseBackground:                $grayDark;
+$navbarInverseBackgroundHighlight:       $grayDark;
+$navbarInverseBorder:                    #252525;
 
-
-$btnInverseBackground:              lighten($navbarInverseBackground, 15%);
-$btnInverseBackgroundHighlight:     $navbarInverseBackground;
-
-$navbarInverseBackgroundHighlight:       lighten($navbarInverseBackground, 25%);
-$navbarInverseBorder:                    darken($navbarInverseBackground, 5%);
-
-$navbarInverseText:                      $grayLighter;
-$navbarInverseLinkColor:                 $grayLighter;
+$navbarInverseText:                      $grayLight;
+$navbarInverseLinkColor:                 $grayLight;
 $navbarInverseLinkColorHover:            $white;
-$navbarInverseLinkColorActive:           $white;
+$navbarInverseLinkColorActive:           $navbarInverseLinkColorHover;
 $navbarInverseLinkBackgroundHover:       transparent;
 $navbarInverseLinkBackgroundActive:      $navbarInverseBackground;
 
 $navbarInverseSearchBackground:          lighten($navbarInverseBackground, 25%);
 $navbarInverseSearchBackgroundFocus:     $white;
 $navbarInverseSearchBorder:              $navbarInverseBackground;
-$navbarInverseSearchPlaceholderColor:    $grayLighter;
+$navbarInverseSearchPlaceholderColor:    #ccc;
 
 $navbarInverseBrandColor:                $navbarInverseLinkColor;
 
@@ -226,27 +224,27 @@ $paginationActiveBackground:          #f5f5f5;
 // Hero unit
 // -------------------------
 $heroUnitBackground:              $grayLighter;
-$heroUnitHeadingColor:            $headingsColor;
+$heroUnitHeadingColor:            inherit;
 $heroUnitLeadColor:               inherit;
 
 
 // Form states and alerts
 // -------------------------
-$warningText:             $white;
-$warningBackground:       $orange;
-//$warningBorder:           darken(spin($warningBackground, -10), 3%);
+$warningText:             #c09853;
+$warningBackground:       #fcf8e3;
+$warningBorder:           darken(adjust-hue($warningBackground, -10), 3%);
 
-$errorText:               $white;
-$errorBackground:         $red;
-//$errorBorder:             darken(spin($errorBackground, -10), 3%);
+$errorText:               #b94a48;
+$errorBackground:         #f2dede;
+$errorBorder:             darken(adjust-hue($errorBackground, -10), 3%);
 
-$successText:             $white;
-$successBackground:       $green;
-//$successBorder:           darken(spin($successBackground, -10), 5%);
+$successText:             #468847;
+$successBackground:       #dff0d8;
+$successBorder:           darken(adjust-hue($successBackground, -10), 5%);
 
-$infoText:                $white;
-$infoBackground:          $blue;
-//$infoBorder:              darken(spin($infoBackground, -10), 7%);
+$infoText:                #3a87ad;
+$infoBackground:          #d9edf7;
+$infoBorder:              darken(adjust-hue($infoBackground, -10), 7%);
 
 
 // Tooltips and popovers
@@ -303,7 +301,6 @@ $fluidGridColumnWidth768:      percentage($gridColumnWidth768/$gridRowWidth768);
 $fluidGridGutterWidth768:      percentage($gridGutterWidth768/$gridRowWidth768);
 
 
-
 @import "bootstrap";
 
 // Spacelab 2.2.2
@@ -314,7 +311,7 @@ $fluidGridGutterWidth768:      percentage($gridGutterWidth768/$gridRowWidth768);
 // TYPOGRAPHY
 // -----------------------------------------------------
 
-@import url('//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700');
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700");
 
 // SCAFFOLDING
 // -----------------------------------------------------
@@ -325,7 +322,7 @@ $fluidGridGutterWidth768:      percentage($gridGutterWidth768/$gridRowWidth768);
 .navbar {
 
   .navbar-inner {
-    @include box-shadow(0, 1px, 0, rgba(255,255,255,0.4), 0, 1px,0,rgba(0,0,0,0.8));
+    @include box-shadow(0 1px 0 rgba(255,255,255,0.4), 0 1px 0 rgba(0,0,0,0.8));
   }
 
   .brand {
@@ -353,42 +350,42 @@ $fluidGridGutterWidth768:      percentage($gridGutterWidth768/$gridRowWidth768);
     line-height: normal;
     color: $grayLight;
     @include placeholder($grayLight);
-    @include box-shadow(inset, 0, 1px, 2px, rgba(0, 0, 0, 0.5));
+    @include box-shadow(inset 0 1px 2px rgba(0, 0, 0, 0.5));
 
       &:focus,
       &.focused {
-      @include box-shadow(inset, 0, 1px, 2px, rgba(0, 0, 0, 0.5));
+      @include box-shadow(inset 0 1px 2px rgba(0, 0, 0, 0.5));
       color: $textColor;
     }
   }
+}
 
-  &.inverse {
+.navbar-inverse {
 
-    .brand {
-      text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+  .brand {
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
 
-      &:hover {
-        color: $white;
-      }
-    }
-
-    .nav > li > a {
-      text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
-    }
-
-    .nav li.dropdown.open > .dropdown-toggle .caret,
-    .nav li.dropdown:hover > .dropdown-toggle .caret,
-    .nav li.dropdown.open:hover > .dropdown-toggle .caret {
-      border-top-color: $white;
-    }
-
-    .navbar-search .search-query,
-    .navbar-search .search-query:hover {
-
+    &:hover {
       color: $white;
-
-      @include placeholder($grayLighter);
     }
+  }
+
+  .nav > li > a {
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .nav li.dropdown.open > .dropdown-toggle .caret,
+  .nav li.dropdown:hover > .dropdown-toggle .caret,
+  .nav li.dropdown.open:hover > .dropdown-toggle .caret {
+    border-top-color: $white;
+  }
+
+  .navbar-search .search-query,
+  .navbar-search .search-query:hover {
+
+    color: $white;
+
+    @include placeholder($grayLighter);
   }
 }
 
@@ -521,36 +518,35 @@ div.subnav {
 .label, .badge {
 
   padding-top: 4px;
+}
 
-  &.important {
-    background-color: $red;
-  }
+.label-important, .badge-important {
+  background-color: $red;
+}
 
-  &.warning {
-    background-color: $orange;
-  }
+.label-warning, .badge-warning {
+  background-color: $orange;
+}
 
-  &.success {
-    background-color: $green;
-  }
+.label-success, .badge-success {
+  background-color: $green;
+}
 
-  &.info {
-    background-color: $blue;
-  }
+.label-info, .badge-info {
+  background-color: $blue;
 }
 
 // MISC
 // -----------------------------------------------------
 
 .well {
-  @include box-shadow(inset, 1px, 1px, 0, rgba(0,0,0,.1));
+  @include box-shadow(inset 1px 1px 0 rgba(0,0,0,.1));
 }
 
 .hero-unit {
-  @include box-shadow(inset, 1px, 1px, 0, rgba(0,0,0,.1));
+  @include box-shadow(inset 1px 1px 0 rgba(0,0,0,.1));
   border: 1px solid rgba(0,0,0,.1);
 }
 
 // MEDIA QUERIES
 // -----------------------------------------------------
-

@@ -9,12 +9,17 @@ gem 'decent_exposure'
 gem 'turbolinks'
 gem 'simple_form'
 
+gem 'activeadmin'
+gem "meta_search", '>= 1.1.0.pre'
+
+gem 'jquery-rails'
+
+#TODO  needed for the server
+gem 'mysql'
+
 group :production do
   # needed for heroku
   gem 'pg'
-
-  #TODO  needed for the server
-  #gem 'mysql'
 end
 
 # Gems used only for assets and not required
@@ -22,7 +27,7 @@ end
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails'
   gem 'bootstrap-sass'
 
   #TODO  needed for the server
@@ -31,7 +36,6 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'certified'
   gem 'better_errors'
   gem 'factory_girl_rails'
@@ -44,4 +48,6 @@ group :development, :test do
   gem 'heroku'
 end
 
-gem 'jquery-rails'
+group :test do
+  gem 'sqlite3'
+end
