@@ -8,10 +8,7 @@ gem 'omniauth-google-oauth2'
 gem 'decent_exposure'
 gem 'turbolinks'
 gem 'simple_form'
-sudo gem install nokogiri -v '1.5.10'-- --with-xml2-lib=/usr/local/lib 
-                             --with-xml2-include=/usr/local/include/libxml2 
-                             --with-xslt-lib=/usr/local/lib 
-                             --with-xslt-include=/usr/local/include
+
 gem 'activeadmin'
 gem "meta_search", '>= 1.1.0.pre'
 
