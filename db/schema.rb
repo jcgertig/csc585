@@ -53,10 +53,6 @@ ActiveRecord::Schema.define(:version => 20131113212756) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "new_table", :primary_key => "idnew_table", :force => true do |t|
-    t.string "new_tablecol", :limit => 45
-  end
-
   create_table "periods", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
