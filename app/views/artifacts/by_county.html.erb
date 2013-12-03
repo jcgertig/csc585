@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<%= for @artifacts.each do |a| %>
+<p>
+  <b>Type:</b>
+  <%= a.a_type %>
+</p>
+
+<p>
+  <b>Period:</b>
+  <%= a.period %>
+</p>
+
+<p>
+  <b>Context:</b>
+  <%= a.context %>
+</p>
+
+<p>
+  <b>County:</b>
+  <%= a.county %>
+</p>
+
+<p>
+  <b>Lat:</b>
+  <%= a.lat %>
+</p>
+
+<p>
+  <b>Lon:</b>
+  <%= a.lon %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= a.desc %>
+</p>
+
+
+<%= link_to 'Edit', edit_artifact_path(a) %> |
+<%= link_to 'Back', artifacts_path %>
+<% end %>
