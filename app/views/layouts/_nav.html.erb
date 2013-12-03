@@ -26,6 +26,9 @@
                   <% if current_user.is_admin? %>
                   <li><%= link_to '<i class="icon-eye-open"></i> Admin Dashboard'.html_safe, admin_root_path %></li>
                   <% end %>
+                  <% if %>
+                  <li><%= link_to 'Add Artifact'.html_safe, new_artifact_path %></li>
+                  <% end %>
             </ul>
           </li>
         <% else user_signed_in? %>

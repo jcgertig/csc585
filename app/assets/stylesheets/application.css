@@ -12,4 +12,5 @@
  *= require app
  *= require devise
  *= require nav
+ *= require jquery.fileupload-ui
  */

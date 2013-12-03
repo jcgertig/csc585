@@ -12,15 +12,20 @@ gem 'simple_form'
 gem 'activeadmin'
 gem "meta_search", '>= 1.1.0.pre'
 
+gem 'carrierwave'
+gem "fog", "~> 1.3.1"
+gem 'nested_form'
+gem "jquery-fileupload-rails"
+
 gem 'jquery-rails'
 
 #TODO  needed for the server
 gem 'mysql'
 
-group :production do
+#group :production do
   # needed for heroku
-  gem 'pg'
-end
+  #gem 'pg'
+#end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -32,8 +37,8 @@ group :assets do
   gem 'bootswatch-rails'
 
   #TODO  needed for the server
-  #gem 'execjs'
-  #gem 'therubyracer'
+  gem 'execjs'
+  gem 'therubyracer'
 end
 
 group :development, :test do

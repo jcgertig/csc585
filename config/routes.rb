@@ -1,5 +1,7 @@
 Csc585::Application.routes.draw do
 
+  resources :images
+
   ActiveAdmin.routes(self)
 
   get "home/index"

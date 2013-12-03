@@ -1,7 +1,11 @@
 Csc585::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-  ENV['GOOGLE_APP_ID'] = "961912784625-kalq2nu78qv92bskeom5t8ul3la4qvmj.apps.googleusercontent.com";
-  ENV['GOOGLE_SECRET'] = "6dZGObshy5549ZZ5dYprtMiB";
+  #ENV['GOOGLE_APP_ID'] = "961912784625-kalq2nu78qv92bskeom5t8ul3la4qvmj.apps.googleusercontent.com";
+  #ENV['GOOGLE_SECRET'] = "6dZGObshy5549ZZ5dYprtMiB";
+  ENV['GOOGLE_APP_ID'] = "594444215136.apps.googleusercontent.com";
+  ENV['GOOGLE_SECRET'] = "smUIapTscHfugBQsOrLR0lhx";
+  ENV['AWS_ID'] = "AKIAIM26MWTVS27RKI5Q"
+  ENV['AWS_Secret'] = "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"
   
   # Code is not reloaded between requests
   config.cache_classes = true

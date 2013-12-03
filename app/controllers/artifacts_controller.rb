@@ -31,11 +31,11 @@ class ArtifactsController < ApplicationController
   # POST /artifacts
   # POST /artifacts.json
   def create
-    @artifact = current_user.artifacts.new(params[:artifact], user_id: current_user.id)
+    @artifact = current_user.artifacts.new(params[:artifact])
 
     respond_to do |format|
       if @artifact.save
-        format.html { redirect_to @artifact, notice: 'Artifact was successfully created.' }
+        format.html { redirect_to new_image_path(artifact_id: @artifact.id) }
         format.json { render json: @artifact, status: :created, location: @artifact }
       else
         format.html { render action: "new" }
