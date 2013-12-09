@@ -14,7 +14,6 @@ gem "meta_search", '>= 1.1.0.pre'
 
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
-gem 'nested_form'
 gem "jquery-fileupload-rails"
 
 gem 'jquery-rails'

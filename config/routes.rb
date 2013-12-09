@@ -15,6 +15,8 @@ Csc585::Application.routes.draw do
 
   resources :profiles
 
+  match "/artifacts/by_county", to: "artifacts#by_county"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

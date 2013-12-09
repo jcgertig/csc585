@@ -31,11 +31,15 @@ test:
   timeout: 5000
 
 production:
-  adapter: mysql
-  encoding: utf8
-  database: 585_fall13
-  #username: csc585
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+#  adapter: mysql
+#  encoding: utf8
+#  database: 585_fall13
+#  #username: csc585
   #password: csc585_2094
-  username: root
-  password:
-  host: localhost
+#  username: root
+#  password:
+#  host: localhost
