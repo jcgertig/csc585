@@ -73,6 +73,6 @@ class ArtifactsController < ApplicationController
   end
 
   def by_county
-    @artifacts.find_by_county(params[:county])
+    @artifacts = Artifact.find_all_by_county(params[:county])
   end
 end

@@ -1,3 +1,14 @@
+<script type="text/javascript">
+
+$(document).ready(function() {    
+  
+  //Execute the slideShow, set 4 seconds for each images
+  slideShow(4000);
+
+});
+
+</script>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -33,6 +44,14 @@
 <p>
   <b>Desc:</b>
   <%= @artifact.desc %>
+</p>
+
+<p>
+<b>Images:</b>
+
+  <% @artifact.images.each do |i| %>
+    <a href="<%= i.file_url.to_s %>" rel="lightbox" title="<%= @artifact.desc.to_s %>"><%= image_tag i.file_url.to_s, class: "icon" %></a>
+  <% end %>
 </p>
 
 

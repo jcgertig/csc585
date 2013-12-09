@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
   attr_accessible :provider, :uid, :kind
 
   has_one :profile
-  has_many :artifacts;
+  has_many :artifacts
+  has_many :images
 
   def no_profile?
     profile.nil?

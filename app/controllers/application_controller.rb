@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   expose(:states) { State.by_name }
   expose(:counties) { County.by_name }
   expose(:types) { Type.all }
-  expose(:contexts) { Context.by_name }
+  expose(:contexts) { Context.all }
   expose(:periods) { Period.all }
 
   def authenticate_admin_user!

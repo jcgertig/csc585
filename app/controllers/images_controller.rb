@@ -11,9 +11,16 @@ class ImagesController < ApplicationController
 
   def create
     @artifact = Artifact.find(params[:artifact_id])
-    #binding.pry
-    params[:image]['upload'].each do |f|
-      @image = Image.create!(file: f, artifact_id: params[:artifact_id], user_id: current_user.id)
+    @img = @artifact.images.build(file: params[:image]['image'], user_id: current_user.id)
+    
+    respond_to do |format|
+      if @img.save
+        format.html { redirect_to @artifact }
+        format.json { render json: @img, status: :created, location: @artifact }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @img.errors, status: :unprocessable_entity }
+      end
     end
   end
 end

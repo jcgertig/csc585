@@ -5,7 +5,8 @@ class HomeController < ApplicationController
         redirect_to new_profile_path, notice: "Please fill in your profile information."
       elsif current_user.empty_fields?
         redirect_to edit_profile_path(current_user.profile), notice: "Please fill in all required fields."
-      end	
+      end
     end
+    @counties = County.all
   end
 end

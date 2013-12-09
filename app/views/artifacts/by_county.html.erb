@@ -1,42 +1,44 @@
 <p id="notice"><%= notice %></p>
+<div class="Center-Container">
+  
+  <div class="Absolute-Center">
+  <%= @artifacts.each do |artifact| %>
 
-<%= for @artifacts.each do |a| %>
+
 <p>
   <b>Type:</b>
-  <%= a.a_type %>
+  <%= artifact.a_type %>
 </p>
 
 <p>
   <b>Period:</b>
-  <%= a.period %>
+  <%= artifact.period %>
 </p>
 
 <p>
   <b>Context:</b>
-  <%= a.context %>
+  <%= artifact.context %>
 </p>
 
 <p>
   <b>County:</b>
-  <%= a.county %>
+  <%= artifact.county %>
 </p>
 
 <p>
   <b>Lat:</b>
-  <%= a.lat %>
+  <%= artifact.lat %>
 </p>
 
 <p>
   <b>Lon:</b>
-  <%= a.lon %>
+  <%= artifact.lon %>
 </p>
 
 <p>
   <b>Desc:</b>
-  <%= a.desc %>
+  <%= artifact.desc %>
 </p>
-
-
-<%= link_to 'Edit', edit_artifact_path(a) %> |
-<%= link_to 'Back', artifacts_path %>
 <% end %>
+  </div>
+</div>

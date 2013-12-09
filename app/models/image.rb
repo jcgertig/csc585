@@ -2,6 +2,7 @@ class Image < ActiveRecord::Base
 
   attr_accessible :file, :artifact_id, :user_id
   belongs_to :artifact
+  belongs_to :user
   mount_uploader :file, ImageUploader
 
   include Rails.application.routes.url_helpers

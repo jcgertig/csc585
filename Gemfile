@@ -14,7 +14,6 @@ gem "meta_search", '>= 1.1.0.pre'
 
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
-gem "jquery-fileupload-rails"
 
 gem 'jquery-rails'
 
@@ -32,8 +31,9 @@ group :assets do
   gem 'coffee-rails',   '~> 3.2.1'
   gem 'uglifier',       '>= 1.0.3'
   gem 'sass-rails',     '~> 3.2.3'
-  gem 'bootstrap-sass'
+  gem 'bootstrap-sass', '~> 2'
   gem 'bootswatch-rails'
+  gem "jquery-fileupload-rails"
 
   #TODO  needed for the server
   #gem 'execjs'
