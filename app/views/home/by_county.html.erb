@@ -39,8 +39,8 @@
 
       <p>
         <b>Images:</b>
-          <% @artifact.images.each do |i| %>
-            <a href="<%= i.file_url.to_s %>" rel="lightbox" title="<%= @artifact.desc.to_s %>"><%= image_tag i.file_url.to_s, class: "icon" %></a>
+          <% artifact.images.each do |i| %>
+            <a href="<%= i.file_url.to_s %>" rel="lightbox" title="<%= artifact.desc.to_s %>"><%= image_tag i.file_url.to_s, class: "icon" %></a>
           <% end %>
       </p>
     </div>
