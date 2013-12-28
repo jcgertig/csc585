@@ -1,49 +1,49 @@
 <div class="row-fluid">
   <% if @artifacts.count != 0 %>
-    <%= @artifacts.each do |artifact| %>
-    <div class="span2">
-      <p>
-        <b>Type:</b>
-        <%= artifact.a_type %>
-      </p>
+      <% @artifacts.each do |artifact| %>
+      <div class="span2">
+        <p>
+          <b>Type:</b>
+          <%= artifact.a_type %>
+        </p>
 
-      <p>
-        <b>Period:</b>
-        <%= artifact.period %>
-      </p>
+        <p>
+          <b>Period:</b>
+          <%= artifact.period %>
+        </p>
 
-      <p>
-        <b>Context:</b>
-        <%= artifact.context %>
-      </p>
+        <p>
+          <b>Context:</b>
+          <%= artifact.context %>
+        </p>
 
-      <p>
-        <b>County:</b>
-        <%= artifact.county %>
-      </p>
+        <p>
+          <b>County:</b>
+          <%= artifact.county %>
+        </p>
 
-      <p>
-        <b>Lat:</b>
-        <%= artifact.lat %>
-      </p>
+        <p>
+          <b>Lat:</b>
+          <%= artifact.lat %>
+        </p>
 
-      <p>
-        <b>Lon:</b>
-        <%= artifact.lon %>
-      </p>
+        <p>
+          <b>Lon:</b>
+          <%= artifact.lon %>
+        </p>
 
-      <p>
-        <b>Desc:</b>
-        <%= artifact.desc %>
-      </p>
+        <p>
+          <b>Desc:</b>
+          <%= artifact.desc %>
+        </p>
 
-      <p>
-        <b>Images:</b>
-          <% artifact.images.each do |i| %>
-            <a href="<%= i.file_url.to_s %>" rel="lightbox" title="<%= artifact.desc.to_s %>"><%= image_tag i.file_url.to_s, class: "icon" %></a>
-          <% end %>
-      </p>
-    </div>
+        <p>
+          <b>Images:</b>
+            <% artifact.images.each do |i| %>
+              <a href="<%= i.file_url.to_s %>" rel="lightbox" title="<%= artifact.desc.to_s %>"><%= image_tag i.file_url.to_s, class: "icon" %></a>
+            <% end %>
+        </p>
+      </div>
     <% end %>
   <% else %>
     <div width="100%" style="margin: 20px 0;" class="text-center">

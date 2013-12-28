@@ -33,7 +33,7 @@ this.hoverbox = function(){
 
 
 // starting the script on page load
-$(document).ready(function(){
+$(document).on("ready page:load", function(){
 	hoverbox();
 });
 
