@@ -9,4 +9,8 @@ class HomeController < ApplicationController
     end
     @counties = County.all
   end
+
+  def by_county
+    @artifacts = Artifact.find_all_by_county(params[:county])
+  end
 end

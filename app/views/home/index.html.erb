@@ -1,8 +1,8 @@
-<%= image_tag("kentucky-counties.png", width: '772', height: '348', alt: "Map of Kentucky Counties", title: "Map of Kentucky Counties", usemap: "#locator") %>
+<%= image_tag("kentucky-counties.png", width: '772', height: '348', alt: "Map of Kentucky Counties", title: "Map of Kentucky Counties", usemap: "#locator", class: "map") %>
 <map name="locator">
 
 	<% @counties.each do |c| %>
-	<area shape="poly" coords="<%= c.poly %>" href="artifacts/by_county?county=<%= c.name %>" alt="<%= c.name %> County" title="<%= c.name %> County">
+	<area shape="poly" coords="<%= c.poly %>" href="artifacts/by_county?county=<%= c.name %>" alt="<%= c.name %> County" title="<%= c.name %> County <span class='badge badge-inverse'><%= artfactsForCounty(c.name) %></span>">
 	<% end -%>
 
 	<!- States ->

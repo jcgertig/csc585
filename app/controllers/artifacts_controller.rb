@@ -71,8 +71,4 @@ class ArtifactsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  def by_county
-    @artifacts = Artifact.find_all_by_county(params[:county])
-  end
 end
