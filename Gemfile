@@ -17,6 +17,8 @@ gem "fog", "~> 1.3.1"
 
 gem 'jquery-rails'
 
+gem 'rails_12factor'
+
 #TODO  needed for the server
 #gem 'mysql'
 
