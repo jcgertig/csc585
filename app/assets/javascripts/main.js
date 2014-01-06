@@ -16,10 +16,10 @@ $(function () {
 
     function update(coords)
     {
-      $('#crop_x').val(coords.x)
-      $('#crop_y').val(coords.y)
-      $('#crop_w').val(coords.w)
-      $('#crop_h').val(coords.h)
+      $('#crop_x').val(coords.x);
+      $('#crop_y').val(coords.y);
+      $('#crop_w').val(coords.w);
+      $('#crop_h').val(coords.h);
     };
 
     $('#cropbox').Jcrop({

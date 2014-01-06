@@ -29,7 +29,7 @@ gem 'rails_12factor'
 
 #group :production do
   # needed for heroku
-  gem 'pg'
+  #gem 'pg'
 #end
 
 # Gems used only for assets and not required
