@@ -29,16 +29,18 @@ ActiveRecord::Schema.define(:version => 20131203104815) do
   add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
 
   create_table "artifacts", :force => true do |t|
-    t.string   "a_type"
+    t.string   "artifact_type"
     t.string   "period"
     t.string   "context"
     t.string   "county"
-    t.string   "lat"
-    t.string   "lon"
-    t.text     "desc"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.text     "description"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "token"
+    t.integer  "cover"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "contexts", :force => true do |t|
@@ -58,8 +60,10 @@ ActiveRecord::Schema.define(:version => 20131203104815) do
     t.string   "file"
     t.integer  "artifact_id"
     t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "description"
+    t.string   "artifact_token"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "periods", :force => true do |t|

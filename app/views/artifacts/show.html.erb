@@ -1,59 +1,91 @@
-<script type="text/javascript">
+<div class="row">
+  <h1>Artifact</h1>
 
-$(document).ready(function() {    
-  
-  //Execute the slideShow, set 4 seconds for each images
-  slideShow(4000);
+  <input type="hidden" id="artifactID" value="<%= @artifact.id %>">
 
-});
+  <p>
+    <b>Type: </b>
+    <%= @artifact.a_type %>
+  </p>
 
-</script>
+  <p>
+    <b>Period: </b>
+    <%= @artifact.period %>
+  </p>
 
-<p id="notice"><%= notice %></p>
+  <p>
+    <b>Context: </b>
+    <%= @artifact.context %>
+  </p>
 
-<p>
-  <b>Type:</b>
-  <%= @artifact.a_type %>
-</p>
+  <p>
+    <b>County: </b>
+    <%= @artifact.county %>
+  </p>
 
-<p>
-  <b>Period:</b>
-  <%= @artifact.period %>
-</p>
+  <p>
+    <b>Lat:</b>
+    <%= @artifact.latitude %>
+  </p>
 
-<p>
-  <b>Context:</b>
-  <%= @artifact.context %>
-</p>
+  <p>
+    <b>Lon:</b>
+    <%= @artifact.longitude %>
+  </p>
 
-<p>
-  <b>County:</b>
-  <%= @artifact.county %>
-</p>
+  <p>
+    <b>Description:</b>
+    <%= @artifact.description %>
+  </p>
 
-<p>
-  <b>Lat:</b>
-  <%= @artifact.lat %>
-</p>
+<h2>Pictures</h2>
+</div>
 
-<p>
-  <b>Lon:</b>
-  <%= @artifact.lon %>
-</p>
+<%= form_for [@artifact, @image], :html => { :multipart => true, :id => "fileupload"  } do |f| %>
+  <div class="row">
+    <div class="fileupload-buttonbar">
+      <div class="progressbar fileupload-progressbar nofade"><div style="width:0%;"></div></div>
+      <span class="btn btn-mini fileinput-button">
+        <i class="icon-plus"></i>
+        <span><%= t('photos.add_files') %>...</span>
+        <%= f.file_field :image, :multiple => true %>
+      </span>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <ul class="thumbnails files">
+      <% unless @images.empty? %>
+        <% @images.each do |pic| %>
+            <li class="span3" id="image_<%= pic.id %>">
+              <div class="thumbnail">
+                <a href="<%= pic.image.url %>" rel="lightbox-pictures" title="<%= pic.description %>">
+                  <img src="<%= pic.image.thumb.url %>" alt="">
+                </a>
+                <div class="caption">
+                  <p style="text-align: center;">
+                    <a href="/artifacts/<%= @artifact.id %>/images/<%= pic.id %>/edit" class="btn btn-mini">
+                      <i class="icon-edit "></i>
+                      Edit
+                    </a>
+                    <a class="btn btn-mini btn-delete" confirm="Are you sure?" data-method="delete" href="/artifats/<%= @artifact.id %>/images/<%= pic.id %>" data-remote=true>
+                      <i class="icon-trash"></i>
+                      Delete
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
-<p>
-  <b>Desc:</b>
-  <%= @artifact.desc %>
-</p>
-
-<p>
-<b>Images:</b>
-
-  <% @artifact.images.each do |i| %>
-    <a href="<%= i.file_url.to_s %>" rel="lightbox" title="<%= @artifact.desc.to_s %>"><%= image_tag i.file_url.to_s, class: "icon" %></a>
-  <% end %>
-</p>
-
-
-<%= link_to 'Edit', edit_artifact_path(@artifact) %> |
-<%= link_to 'Back', artifacts_path %>
+<div class="row">
+  <div class="form-actions">
+    <%= link_to 'Back', artifacts_path, class: 'btn btn-mini'  %>
+    <%= link_to 'Edit', edit_artifact_path(@artifact), class: 'btn btn-mini' %>
+    <%= link_to 'Delete', artifact_path(@artifact), method: 'delete', confirm: 'Are you sure?', class: 'btn btn-mini' %>
+  </div>
+</div>

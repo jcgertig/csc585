@@ -4,8 +4,9 @@ Csc585::Application.configure do
   #ENV['GOOGLE_SECRET'] = "6dZGObshy5549ZZ5dYprtMiB";
   ENV['GOOGLE_APP_ID'] = "594444215136.apps.googleusercontent.com";
   ENV['GOOGLE_SECRET'] = "smUIapTscHfugBQsOrLR0lhx";
-  ENV['AWS_ID'] = "AKIAIM26MWTVS27RKI5Q"
-  ENV['AWS_Secret'] = "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"
+  ENV['AWS_ACCESS_KEY_ID'] = "AKIAIM26MWTVS27RKI5Q"
+  ENV['AWS_SECRET_ACCESS_KEY'] = "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"
+  ENV['AWS_S3_BUCKET'] = "csc585"
   
   # Code is not reloaded between requests
   config.cache_classes = true

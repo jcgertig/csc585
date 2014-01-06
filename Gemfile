@@ -10,10 +10,12 @@ gem 'turbolinks'
 gem 'simple_form'
 
 gem 'activeadmin'
-gem "meta_search", '>= 1.1.0.pre'
+gem 'meta_search', '>= 1.1.0.pre'
 
+gem 'rmagick', "2.13.2", :require => 'RMagick'
 gem 'carrierwave'
-gem "fog", "~> 1.3.1"
+gem 'russian', '~> 0.6.0'
+gem 'fog', '~> 1.3.1'
 
 gem 'jquery-rails'
 
@@ -33,9 +35,6 @@ group :assets do
   gem 'coffee-rails',   '~> 3.2.1'
   gem 'uglifier',       '>= 1.0.3'
   gem 'sass-rails',     '~> 3.2.3'
-  gem 'bootstrap-sass', '~> 2'
-  gem 'bootswatch-rails'
-  gem "jquery-fileupload-rails"
 
   #TODO  needed for the server
   #gem 'execjs'

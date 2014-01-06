@@ -1,9 +1,5 @@
-
-  <div class="Absolute-Center"> 
-    <h2>Enter picture of the Artifact</h2><br>   
-    <%= simple_form_for Image.new, :html => { :multipart => true } do |f| %>
-      <%= f.file_field :image %>
-      <%= hidden_field_tag :artifact_id, @artifact_id %>
-      <%= f.button :submit, "Submit", class: "btn btn-large btn-primary" %>
-    <% end %>
-  </div>
+<%- model_class = @image.class -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human, :default => "New #{model_class.model_name.human}") %></h1>
+</div>
+<%= render :partial => 'form' %>

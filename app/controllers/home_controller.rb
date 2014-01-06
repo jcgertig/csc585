@@ -12,5 +12,16 @@ class HomeController < ApplicationController
 
   def by_county
     @artifacts = Artifact.find_all_by_county(params[:county])
+    @county = params[:county]
+    @count = (@artifacts.count/6.0).ceil
+    if @count > 1
+      if !params[:start] || params[:start] == "0"
+        @artifacts = @artifacts[0..5]
+        @start = 0
+      else 
+        @artifacts = @artifacts[params[:start].to_i..((params[:start].to_i * 2) - 1)]
+        @start = params[:start].to_i
+      end
+    end
   end
 end

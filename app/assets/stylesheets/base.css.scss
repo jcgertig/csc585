@@ -88,5 +88,20 @@ form {
 #hoverbox {
   background: #F7F7F9;
   border-radius: 10px;
-  padding: 1.5px 2px;
+  padding: 2px 1.5px 3px;
+}
+
+.span6 {
+  
+  .profile_contact {
+
+    #profile_contact {
+      margin-top: -1.5px;
+    }
+
+    label {
+      display: inline;
+      margin-left: 5px;
+    }
+  }
 }

@@ -1,4 +1,5 @@
-<%= simple_form_for( @artifact, html: {class: "Center-Container", multipart: true}) do |f| %>
+<%= simple_form_for( @artifact, html: {class: "form-horizontal"}) do |f| %>
+  <%= f.hidden_field :token %>
   <% if @artifact.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@artifact.errors.count, "error") %> prohibited this artifact from being saved:</h2>
@@ -10,30 +11,114 @@
       </ul>
     </div>
   <% end %>
-  <div class="Absolute-Center">
-    <div class="span4">
-          <%=f.input :a_type, required: true, collection: types, label: "Type", value_method: :name, include_blank: 'Select Type'%>
-        </div>
-    <div class="span4">
-          <%=f.input :period, required: true, collection: periods, label: "Period", value_method: :name, include_blank: 'Select Period'%>
-        </div>
-    <div class="span4">
-          <%=f.input :context, required: true, collection: contexts, label: "Context", value_method: :name, include_blank: 'Select Context'%>
-        </div>
-    <div class="span4">
-          <%=f.input :county, required: true, collection: counties, label: "County", value_method: :name, include_blank: 'Select County'%>
-        </div>
-    <div class="span4">
-          <%=f.input :lat, required: false, label: "Latitude"%>
-        </div>
-    <div class="span4">
-          <%=f.input :lon, required: false, label: "Longitude"%>
-        </div>
-    <div class="span7">
-          <%=f.input :desc, as: :text, required: true, label: "Description", input_html: { cols: 85, rows: 10, style: "width: inherit;" }%>
-        </div>
-    <div class="span6">
-      <%= f.button :submit, "Submit", class: "btn btn-large btn-primary" %>
+    <div class="control-group">
+      <%= f.label :artifact_type, "Type", class: 'control-label' %>
+      <div class="controls">
+        <%= f.input :a_type, required: true, collection: types, value_method: :name, include_blank: 'Select Type' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :period, "Period", class: 'control-label' %>
+      <div class="controls">
+        <%= f.input :period, required: true, collection: periods, value_method: :name, include_blank: 'Select Period' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :context, "Context", class: 'control-label' %>
+      <div class="controls">
+        <%= f.input :context, required: true, collection: contexts, value_method: :name, include_blank: 'Select Context' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :county, "County", class: 'control-label' %>
+      <div class="controls">
+        <%= f.input :county, required: true, collection: counties, value_method: :name, include_blank: 'Select County' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :latitude, "Latitude", class: 'control-label' %>
+      <div class="controls">
+        <%= f.input :latitude, required: false %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :longitude, "Longitude", class: 'control-label' %>
+      <div class="controls">
+        <%= f.input :longitude, required: false %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :description, class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :description, as: :text, required: true, class: 'text_field' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, class: 'btn btn-mini btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")), artifacts_path, class: 'btn btn-mini' %>
+    </div>
+<% end %>
+
+<%= form_for @image, :html => { :multipart => true, :id => "fileupload"  } do |f| %>
+  <div class="row">
+    <%= f.hidden_field :artifact_token, value: @artifact.token %>
+
+    <div class=" fileupload-buttonbar">
+      <div class="progressbar fileupload-progressbar nofade"><div style="width:0%;"></div></div>
+      <span class="btn btn-mini fileinput-button">
+        <i class="icon-plus"></i>
+        <span><%= t('photos.add_files') %>...</span>
+        <%= f.file_field :image, :multiple => true %>
+      </span>
     </div>
   </div>
+
+  <h2>Pictures</h2>
+  <br>
+  <div class="row">
+    <ul class="thumbnails files">
+    </ul>
+  </div>
 <% end %>
+<script>
+  var fileUploadErrors = {
+    maxFileSize: 'File is too big',
+    minFileSize: 'File is too small',
+    acceptFileTypes: 'Filetype not allowed',
+    maxNumberOfFiles: 'Max number of files exceeded',
+    uploadedBytes: 'Uploaded bytes exceed file size',
+    emptyResult: 'Empty file upload result'
+  };
+</script>
+
+<script id="template-download" type="text/html">
+  {% for (var i=0, files=o.files, l=files.length, file=files[0]; i<l; file=files[++i]) { %}
+  <tr class="template-download nofade">
+    {% if (file.error) { %}
+    <td></td>
+    <td class="name">{%=file.name%}</td>
+    <td class="size">{%=o.formatFileSize(file.size)%}</td>
+    <td class="error" colspan="2"><span class="label important">Error</span> {%=fileUploadErrors[file.error] || file.error%}</td>
+    {% } else { %}
+    <td class="preview">{% if (file.thumbnail_url) { %}
+      <a href="{%=file.url%}" title="{%=file.name%}" rel="artifact"><img src="{%=file.thumbnail_url%}"></a>
+    {% } %}</td>
+    <td class="name">
+      <a href="{%=file.url%}" title="{%=file.name%}" rel="{%=file.thumbnail_url&&'artifact'%}">{%=file.name%}</a>
+    </td>
+    <td class="size">{%=o.formatFileSize(file.size)%}</td>
+    <td colspan="2"></td>
+    {% } %}
+    <td class="delete">
+    <button class="btn btn-danger" data-type="{%=file.delete_type%}" data-url="{%=file.delete_url%}"><%= t('photos.template.delete') %></button>
+    <input type="checkbox" name="delete" value="1">
+    </td>
+  </tr>
+  {% } %}
+</script>
+
+<%= javascript_include_tag 'jquery.ui.widget.js' %>
+<%= javascript_include_tag 'jquery.iframe-transport.js' %>
+<%= javascript_include_tag 'jquery.fileupload.js' %>
+<%= javascript_include_tag 'jquery.fileupload-ui.js' %>

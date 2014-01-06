@@ -13,6 +13,18 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap
-//= require jquery-fileupload
+//= require bootstrap-image-gallery.min
+
+//= require slimbox2
+
+//= require jquery.ui.widget
+
+//= require jquery.Jcrop
+
+//= require load-image.min
+//= require canvas-to-blob.min
+//= require jquery.iframe-transport
+//= require jquery.fileupload
+//= require jquery.fileupload-ip
+//= require jquery.fileupload-ui
 //= require_tree .

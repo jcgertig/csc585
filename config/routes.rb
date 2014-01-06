@@ -1,7 +1,15 @@
 Csc585::Application.routes.draw do
 
+  match "/artifacts/by_county", to: "home#by_county"
+  resources :artifacts do
+    resources :images do
+      collection do
+        post 'make_default'
+      end
+    end
+  end
   resources :images
-
+  
   ActiveAdmin.routes(self)
 
   get "home/index"
@@ -11,8 +19,7 @@ Csc585::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users
   
-  match "/artifacts/by_county", to: "home#by_county"
-  resources :artifacts
+  
 
   resources :profiles
 

@@ -12,6 +12,6 @@
  *= require app
  *= require devise
  *= require nav
- *= require jquery.fileupload-ui
+ *= require home
  *= require slimbox2
  */

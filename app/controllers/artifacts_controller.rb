@@ -5,7 +5,9 @@ class ArtifactsController < ApplicationController
   # GET /artifacts/1.json
   def show
     @artifact = Artifact.find(params[:id])
-
+    @image = @artifact.images.build
+    @images = Image.find(:all, conditions: ['artifact_id = ?', @artifact.id])
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @artifact }
@@ -16,6 +18,9 @@ class ArtifactsController < ApplicationController
   # GET /artifacts/new.json
   def new
     @artifact = Artifact.new
+    @artifact.token = @artifact.generate_token
+    @image = @artifact.images.build
+    @images = []
 
     respond_to do |format|
       format.html # new.html.erb
@@ -26,16 +31,20 @@ class ArtifactsController < ApplicationController
   # GET /artifacts/1/edit
   def edit
     @artifact = Artifact.find(params[:id])
+    @image = @artifact.images.build
+    @images = []
   end
 
   # POST /artifacts
   # POST /artifacts.json
   def create
     @artifact = current_user.artifacts.new(params[:artifact])
+    @images = Image.where(:artifact_token => @artifact.token)
+    @artifact.images << @images
 
     respond_to do |format|
       if @artifact.save
-        format.html { redirect_to new_image_path(artifact_id: @artifact.id) }
+        format.html { redirect_to @artifact }
         format.json { render json: @artifact, status: :created, location: @artifact }
       else
         format.html { render action: "new" }
