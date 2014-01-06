@@ -6,7 +6,7 @@
     </div>
   </div>
   
-    <%= image_tag @picture.image.large.url, :id => 'cropbox' %>
+  <%= image_tag @image.file.large.url, :id => 'cropbox' %>
   
   <% %w[x y w h].each do |attribute| %>
     <%= f.hidden_field "crop_#{attribute}" %>
