@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.widget
 //= require jquery.Jcrop
 //= require turbolinks
 //= require bootstrap
@@ -21,7 +22,6 @@
 //= require jquery.fileupload
 //= require jquery.fileupload-ip
 //= require jquery.fileupload-ui
-//= require jquery.ui.widget
 //= require locale
 //= require main
 //= require home
