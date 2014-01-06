@@ -21,19 +21,21 @@ class ImagesController < ApplicationController
   end
 
   def new
-    @artifact = Artifact.find(params[:artifact_id])
-    @image = @artifact.images.build
-
     respond_to do |format|
+      if params[:artifact_id]
+        @artifact = Artifact.find(params[:artifact_id])
+        @image = @artifact.images.build
+      else
+        redirect_to new_artifact_path
+      end
       format.html
       format.json { render json: @image}
     end
   end
 
   def edit
-    @artifact = Artifact.find(params[:artifact_id])
-
-    @image = @artifact.images.find(params[:id])
+    @image = Image.find(params[:id])
+    @artifact = Artifact.find(@image.artifact_id)
   end
 
   def create
