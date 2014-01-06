@@ -21,6 +21,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  def default_url
+    "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+  end
+
   resize_to_limit(1024, 768)
 
   def extension_white_list
