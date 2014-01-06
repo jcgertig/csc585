@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
 //= require turbolinks
+//= require bootstrap
 //= require jquery.ui.widget
 //= require jquery.Jcrop
 //= require load-image.min
