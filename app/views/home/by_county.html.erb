@@ -4,13 +4,13 @@
         <% @artifacts.each do |artifact| %>
         <div class="span2">
         <% artifact.images.first(2).each do |i| %>
-                <a href="<%= i.file_url.to_s %>" rel="lightbox" title="<%= artifact.desc.to_s %>"><%= image_tag i.file_url.to_s, class: "icon" %></a>
+                <a href="<%= i.file_url.to_s %>" rel="lightbox" title="<%= i.description.to_s %>"><%= image_tag i.file_url.to_s, class: "icon" %></a>
               <% end %>
         </div>
         <div class="span4" >
           <p>
             <b>Type:</b>
-            <%= artifact.a_type %>
+            <%= artifact.artifact_type %>
           </p>
 
           <p>
@@ -30,7 +30,7 @@
 
           <p>
             <b>Desc:</b>
-            <%= artifact.desc %>
+            <%= artifact.description %>
           </p>
 
           
