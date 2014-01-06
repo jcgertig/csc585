@@ -11,7 +11,7 @@ gem 'simple_form'
 
 gem 'activeadmin'
 gem 'meta_search', '>= 1.1.0.pre'
-#gem 'therubyracer'
+
 
 #gem 'rmagick', "2.13.2", :require => 'RMagick'
 gem 'carrierwave'
@@ -27,7 +27,7 @@ gem 'rails_12factor'
 
 #group :production do
   # needed for heroku
-  gem 'pg'
+  #gem 'pg'
 #end
 
 # Gems used only for assets and not required
@@ -39,6 +39,7 @@ group :assets do
 
   #TODO  needed for the server
   #gem 'execjs'
+  #gem 'therubyracer'
 end
 
 group :development, :test do
