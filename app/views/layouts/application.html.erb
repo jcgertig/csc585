@@ -5,6 +5,18 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <style type="text/css">
+    /* Fix for IE 6: */
+    *html .fileinput-button {
+      line-height: 22px;
+      margin: 1px -3px 0 0;
+    }
+
+    /* Fix for IE 7: */
+    *+html .fileinput-button {
+      margin: 1px 0 0 0;
+    }
+  </style>
 </head>
 <body class="<%=params[:controller].parameterize%>_<%=params[:action].parameterize%>">
   <%= render "layouts/nav" %>

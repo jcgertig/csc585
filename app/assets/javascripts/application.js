@@ -12,15 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require bootstrap-image-gallery.min
-//= require slimbox2
 //= require jquery.ui.widget
 //= require jquery.Jcrop
+//= require turbolinks
+//= require bootstrap
 //= require load-image.min
 //= require canvas-to-blob.min
 //= require jquery.iframe-transport
 //= require jquery.fileupload
 //= require jquery.fileupload-ip
 //= require jquery.fileupload-ui
-//= require_tree .
+//= require locale
+//= require main
+//= require home
+//= require active_admin
+//= require slimbox2
+//= require bootstrap-image-gallery.min
