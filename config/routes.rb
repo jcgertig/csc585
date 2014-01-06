@@ -8,7 +8,7 @@ Csc585::Application.routes.draw do
       end
     end
   end
-  resources :images
+  #resources :images
 
   
   ActiveAdmin.routes(self)

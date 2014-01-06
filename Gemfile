@@ -13,7 +13,7 @@ gem 'simple_form'
 gem 'activeadmin'
 gem 'meta_search', '>= 1.1.0.pre'
 
-gem 'rmagick', "2.13.2", :require => 'RMagick'
+#gem 'rmagick', "2.13.2", :require => 'RMagick'
 gem 'carrierwave'
 gem 'russian', '~> 0.6.0'
 gem 'fog', '~> 1.3.1'
