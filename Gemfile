@@ -11,6 +11,7 @@ gem 'simple_form'
 
 gem 'activeadmin'
 gem 'meta_search', '>= 1.1.0.pre'
+gem 'therubyracer'
 
 gem 'rmagick', "2.13.2", :require => 'RMagick'
 gem 'carrierwave'
@@ -38,7 +39,6 @@ group :assets do
 
   #TODO  needed for the server
   #gem 'execjs'
-  #gem 'therubyracer'
 end
 
 group :development, :test do

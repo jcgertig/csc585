@@ -14,13 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-image-gallery.min
-
 //= require slimbox2
-
 //= require jquery.ui.widget
-
 //= require jquery.Jcrop
-
 //= require load-image.min
 //= require canvas-to-blob.min
 //= require jquery.iframe-transport
