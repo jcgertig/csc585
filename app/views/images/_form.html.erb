@@ -1,21 +1,21 @@
-<%= form_for [@artifact, @image], :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for [@artifact, @image], html: { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
-    <%= f.label :description, :class => 'control-label' %>
+    <%= f.label :description, class: 'control-label' %>
     <div class="controls">
-      <%= f.text_field :description, :class => 'text_field' %>
+      <%= f.text_field :description, class: 'text_field' %>
     </div>
   </div>
   
-  <%= image_tag @image.file.large.url, :id => 'cropbox' %>
+  <%= image_tag @image.file.large.url, id: 'cropbox' %>
   
   <% %w[x y w h].each do |attribute| %>
     <%= f.hidden_field "crop_#{attribute}" %>
   <% end %>
 
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary  btn-mini' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")), artifact_path(@artifact), class: 'btn btn-mini' %>
-    <%= link_to 'Default', '', :class => 'btn btn-mini btn-success' , :id => 'make_default'%>
+    <%= f.submit nil, class: 'btn btn-primary  btn-mini' %>
+    <%= link_to t('.cancel', default: t("helpers.links.cancel")), artifact_path(@artifact), class: 'btn btn-mini' %>
+    <%= link_to 'Default', "", class: 'btn btn-mini btn-success', id: 'make_default'%>
 
   </div>
 <% end %>
