@@ -9,5 +9,16 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require app
+ *= require artifacts
+ *= require base
+ *= require devise
+ *= require home
+ *= require images
+ *= require jquery.Jcrop
+ *= require jquery.fileupload-ui
+ *= require nav
+ *= require pictures
+ *= require slimbox2
+ *= require users
  */

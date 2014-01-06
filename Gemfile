@@ -4,6 +4,7 @@ gem 'rails', '3.2.13'
 
 gem 'devise'
 gem 'omniauth-google-oauth2'
+gem 'rb-readline'
 
 gem 'decent_exposure'
 gem 'turbolinks'
@@ -11,13 +12,14 @@ gem 'simple_form'
 
 gem 'activeadmin'
 gem 'meta_search', '>= 1.1.0.pre'
-#gem 'therubyracer'
 
-#gem 'rmagick', "2.13.2", :require => 'RMagick'
+gem 'rmagick', "2.13.2", :require => 'RMagick'
 gem 'carrierwave'
 gem 'russian', '~> 0.6.0'
 gem 'fog', '~> 1.3.1'
 
+gem 'bootstrap-sass', '~> 2'
+gem 'bootswatch-rails'
 gem 'jquery-rails'
 
 gem 'rails_12factor'
@@ -27,7 +29,7 @@ gem 'rails_12factor'
 
 #group :production do
   # needed for heroku
-  gem 'pg'
+  #gem 'pg'
 #end
 
 # Gems used only for assets and not required
@@ -39,6 +41,7 @@ group :assets do
 
   #TODO  needed for the server
   #gem 'execjs'
+  #gem 'therubyracer'
 end
 
 group :development, :test do
