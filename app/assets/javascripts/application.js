@@ -12,10 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.widget
-//= require jquery.Jcrop
 //= require turbolinks
 //= require bootstrap
+//= require jquery.ui.widget
+//= require jquery.Jcrop
 //= require load-image.min
 //= require canvas-to-blob.min
 //= require jquery.iframe-transport
