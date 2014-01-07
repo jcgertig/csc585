@@ -11,47 +11,28 @@
       </ul>
     </div>
   <% end %>
-    <div class="control-group">
-      <%= f.label :artifact_type, "Type", class: 'control-label' %>
-      <div class="controls">
-        <%= f.input :artifact_type, required: true, collection: types, value_method: :name, include_blank: 'Select Type' %>
-      </div>
+    <div class="span6">
+      <%= f.input :artifact_type, required: true, collection: types, value_method: :name, include_blank: 'Select Type' %>
     </div>
-    <div class="control-group">
-      <%= f.label :period, "Period", class: 'control-label' %>
-      <div class="controls">
-        <%= f.input :period, required: true, collection: periods, value_method: :name, include_blank: 'Select Period' %>
-      </div>
+    <div class="span6">
+      <%= f.input :period, required: true, collection: periods, value_method: :name, include_blank: 'Select Period' %>
     </div>
-    <div class="control-group">
-      <%= f.label :context, "Context", class: 'control-label' %>
-      <div class="controls">
-        <%= f.input :context, required: true, collection: contexts, value_method: :name, include_blank: 'Select Context' %>
-      </div>
+    <div class="span6">
+      <%= f.input :context, required: true, collection: contexts, value_method: :name, include_blank: 'Select Context' %>
     </div>
-    <div class="control-group">
-      <%= f.label :county, "County", class: 'control-label' %>
-      <div class="controls">
-        <%= f.input :county, required: true, collection: counties, value_method: :name, include_blank: 'Select County' %>
-      </div>
+    <div class="span6">
+      <%= f.input :county, required: true, collection: counties, value_method: :name, include_blank: 'Select County' %>
     </div>
-    <div class="control-group">
-      <%= f.label :latitude, "Latitude", class: 'control-label' %>
-      <div class="controls">
-        <%= f.input :latitude, required: false %>
-      </div>
+    <div class="hidden span6">
+      <%= f.input :latitude, required: false %>
     </div>
-    <div class="control-group">
-      <%= f.label :longitude, "Longitude", class: 'control-label' %>
-      <div class="controls">
-        <%= f.input :longitude, required: false %>
-      </div>
+    <div class="hidden span6">
+      <%= f.input :longitude, required: false %>
     </div>
-    <div class="control-group">
-      <%= f.label :description, class: 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :description, as: :text, required: true, class: 'text_field' %>
-      </div>
+    <div class="span12">
+    </div>
+    <div class="span12">
+      <%= f.text_field :description, as: :text, required: true, class: 'text_field' %>
     </div>
 
     <div class="form-actions">
@@ -59,61 +40,3 @@
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")), artifacts_path, class: 'btn btn-mini' %>
     </div>
 <% end %>
-
-<h2>Pictures</h2>
-<br>
-<%= form_for @image, :html => { :multipart => true, :id => "fileupload"  } do |f| %>
-  <div class="row">
-    <%= f.hidden_field :artifact_token, value: @artifact.token %>
-
-    <div class="fileupload-buttonbar">
-      <div class="progressbar fileupload-progressbar nofade"><div style="width:0%;"></div></div>
-      <span class="btn btn-mini fileinput-button">
-        <i class="icon-plus"></i>
-        <span><%= t('photos.add_files') %>...</span>
-        <%= f.file_field :image, :multiple => true %>
-      </span>
-    </div>
-  </div>
-  
-  <div class="row">
-    <ul class="thumbnails files">
-    </ul>
-  </div>
-<% end %>
-<script>
-  var fileUploadErrors = {
-    maxFileSize: 'File is too big',
-    minFileSize: 'File is too small',
-    acceptFileTypes: 'Filetype not allowed',
-    maxNumberOfFiles: 'Max number of files exceeded',
-    uploadedBytes: 'Uploaded bytes exceed file size',
-    emptyResult: 'Empty file upload result'
-  };
-</script>
-
-<script id="template-download" type="text/html">
-  {% for (var i=0, files=o.files, l=files.length, file=files[0]; i<l; file=files[++i]) { %}
-  <tr class="template-download nofade">
-    {% if (file.error) { %}
-    <td></td>
-    <td class="name">{%=file.name%}</td>
-    <td class="size">{%=o.formatFileSize(file.size)%}</td>
-    <td class="error" colspan="2"><span class="label important">Error</span> {%=fileUploadErrors[file.error] || file.error%}</td>
-    {% } else { %}
-    <td class="preview">{% if (file.thumbnail_url) { %}
-      <a href="{%=file.url%}" title="{%=file.name%}" rel="artifact"><img src="{%=file.thumbnail_url%}"></a>
-    {% } %}</td>
-    <td class="name">
-      <a href="{%=file.url%}" title="{%=file.name%}" rel="{%=file.thumbnail_url&&'artifact'%}">{%=file.name%}</a>
-    </td>
-    <td class="size">{%=o.formatFileSize(file.size)%}</td>
-    <td colspan="2"></td>
-    {% } %}
-    <td class="delete">
-    <button class="btn btn-danger" data-type="{%=file.delete_type%}" data-url="{%=file.delete_url%}"><%= t('photos.template.delete') %></button>
-    <input type="checkbox" name="delete" value="1">
-    </td>
-  </tr>
-  {% } %}
-</script>

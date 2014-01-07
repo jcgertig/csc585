@@ -39,9 +39,11 @@ class ImagesController < ApplicationController
   end
 
   def create
-    i_attr = params[:image]
+    i_attr = Hash.new
+    i_attr[:artifact_id] = params[:artifact_id]
     Rails.logger.debug("[debug] : #{i_attr}");
-    i_attr[:file] = params[:image][:file].first if params[:image][:file].class == Array
+
+    i_attr[:file] = params[:image][:image].first if params[:image][:image].class == Array
     Rails.logger.debug("[debug] : #{i_attr[:file]}" );
 
     if params[:artifact_id]

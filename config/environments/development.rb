@@ -3,7 +3,10 @@ Csc585::Application.configure do
   ENV['GOOGLE_SECRET'] = "smUIapTscHfugBQsOrLR0lhx";
   ENV['AWS_ACCESS_KEY_ID'] = "AKIAIM26MWTVS27RKI5Q"
   ENV['AWS_SECRET_ACCESS_KEY'] = "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"
-  ENV['AWS_S3_BUCKET'] = "csc585"
+  ENV['AWS_S3_BUCKET'] = "csc585_dev"
+  ENV['DOMAIN'] = "csc585staging.herokuapp.com"
+  ENV['EMAIL_USER'] = "noreply@kentuckyartifactregistry.com"
+  ENV["EMAIL_PASSWORD"] = "csc585_password"
   # Settings specified here will take precedence over those in config/application.rb
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   # In the development environment your application's code is reloaded on
