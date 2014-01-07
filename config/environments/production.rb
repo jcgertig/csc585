@@ -1,12 +1,10 @@
 Csc585::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-  #ENV['GOOGLE_APP_ID'] = "961912784625-kalq2nu78qv92bskeom5t8ul3la4qvmj.apps.googleusercontent.com";
-  #ENV['GOOGLE_SECRET'] = "6dZGObshy5549ZZ5dYprtMiB";
-  ENV['GOOGLE_APP_ID'] = "594444215136.apps.googleusercontent.com";
-  ENV['GOOGLE_SECRET'] = "smUIapTscHfugBQsOrLR0lhx";
+  ENV['GOOGLE_APP_ID'] = "294137544139-0m7mecdvjkavop44rf92jshd1bqfr9v9.apps.googleusercontent.com"
+  ENV['GOOGLE_SECRET'] = "frkRxv3zpyed8Q3ZbYntEUad"
   ENV['AWS_ACCESS_KEY_ID'] = "AKIAIM26MWTVS27RKI5Q"
   ENV['AWS_SECRET_ACCESS_KEY'] = "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"
-  ENV['AWS_S3_BUCKET'] = "csc585"
+  ENV['AWS_S3_BUCKET'] = "kyartifactreg"
   ENV['DOMAIN'] = "csc585staging.herokuapp.com"
   ENV['EMAIL_USER'] = "noreply@kentuckyartifactregistry.com"
   ENV["EMAIL_PASSWORD"] = "csc585_password"
