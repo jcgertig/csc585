@@ -1,4 +1,4 @@
-<%= simple_form_for( @artifact, html: {class: "form-horizontal"}) do |f| %>
+<%= simple_form_for( @artifact, html: {class: "form-horizontal row"}) do |f| %>
   <%= f.hidden_field :token %>
   <% if @artifact.errors.any? %>
     <div id="error_explanation">
@@ -11,32 +11,32 @@
       </ul>
     </div>
   <% end %>
-    <div class="span6">
+    <div class="span4">
       <%= f.input :artifact_type, required: true, collection: types, value_method: :name, include_blank: 'Select Type' %>
     </div>
-    <div class="span6">
+    <div class="span4">
       <%= f.input :period, required: true, collection: periods, value_method: :name, include_blank: 'Select Period' %>
     </div>
-    <div class="span6">
+    <div class="span4">
       <%= f.input :context, required: true, collection: contexts, value_method: :name, include_blank: 'Select Context' %>
     </div>
-    <div class="span6">
+    <div class="span4">
       <%= f.input :county, required: true, collection: counties, value_method: :name, include_blank: 'Select County' %>
     </div>
-    <div class="hidden span6">
+    <div class="hidden span4">
       <%= f.input :latitude, required: false %>
     </div>
-    <div class="hidden span6">
+    <div class="hidden span4">
       <%= f.input :longitude, required: false %>
     </div>
-    <div class="span12">
+    <div class="span8">
     </div>
-    <div class="span12">
-      <%= f.text_field :description, as: :text, required: true, class: 'text_field' %>
+    <div class="span8">
+      <%= f.input :description, label: "Description", as: :text, required: true, class: 'text_field' %>
     </div>
 
-    <div class="form-actions">
-      <%= f.submit nil, class: 'btn btn-mini btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")), artifacts_path, class: 'btn btn-mini' %>
+    <div class="form-actions span8">
+      <%= f.submit nil, class: 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")), artifacts_path, class: 'btn' %>
     </div>
 <% end %>
