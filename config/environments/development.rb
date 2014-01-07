@@ -3,7 +3,7 @@ Csc585::Application.configure do
   ENV['GOOGLE_SECRET'] = "frkRxv3zpyed8Q3ZbYntEUad"
   ENV['AWS_ACCESS_KEY_ID'] = "AKIAIM26MWTVS27RKI5Q"
   ENV['AWS_SECRET_ACCESS_KEY'] = "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"
-  ENV['AWS_S3_BUCKET'] = "kyartifactreg_dev"
+  ENV['AWS_S3_BUCKET'] = "kyartifactreg-dev"
   ENV['DOMAIN'] = "www.kentuckyartifactregistry.com"
   ENV['EMAIL_USER'] = "noreply@kentuckyartifactregistry.com"
   ENV["EMAIL_PASSWORD"] = "csc585_password"
