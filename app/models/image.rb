@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-  attr_accessible :file, :artifact_id, :user_id, :artifact_token, :crop_x, :crop_y, :crop_w, :crop_h
+  attr_accessible :file, :artifact_id, :user_id, :artifact_token, :description, :crop_x, :crop_y, :crop_w, :crop_h
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   
   belongs_to :artifact
@@ -7,7 +7,7 @@ class Image < ActiveRecord::Base
   
   mount_uploader :file, ImageUploader
 
-  after_update :crop_image
+  #after_update :crop_image
 
   def to_jq_upload
   {
@@ -22,7 +22,7 @@ class Image < ActiveRecord::Base
   end
 
   def crop_image
-    file.recreate_versions! if crop_x.present?
+    file.recreate_versions! if (crop_x.present? && crop_x != "")
     current_version = self.file.current_path
     large_version = "#{Rails.root}/public" + self.file.versions[:large].to_s
 
